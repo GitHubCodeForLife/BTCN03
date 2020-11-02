@@ -1,10 +1,3 @@
-var hbs = require('hbs');
-hbs.registerPartials(__dirname + '/views/partials');
-hbs.registerHelper('checked', function (value, test) {
-  if (value == undefined) return '';
-  return value == test ? 'checked' : '';
-});
-app.set('view engine', 'hbs')
 
 function checkNumberAndSign(){
     //B1: Read input --> number 1 sign number2

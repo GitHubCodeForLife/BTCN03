@@ -28,9 +28,8 @@ router.post('/',(req, res, next)=>{
     default: 
         result = "";break;
   }
-  console.log(Handlebars);
   //console.log(number1 + " " + sign + " " + number2 + " = " + result);
-  res.render('index', { title: 'Express',first_number:number1, second_number:number2, result:result, sign:sign});
+  res.render('index', { title: '18120629',first_number:number1, second_number:number2, result:result, sign:sign});
 });
 
 function checkNumber(str){
