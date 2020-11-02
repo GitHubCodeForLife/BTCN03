@@ -31,7 +31,7 @@ router.post('/',(req, res, next)=>{
 
   }
   console.log(number1 + " " + sign + " " + number2 + " = " + result);
-  res.render('index', { title: 'Express',first_number:number1, second_number:number2, result:result });
+  res.render('index', { title: 'BTCN03 - Trần Văn Tú',first_number:number1, second_number:number2, result:result });
 });
 
 
