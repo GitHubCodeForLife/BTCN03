@@ -1,0 +1,15 @@
+*{
+  margin: 0;
+  padding: 0;
+  color: blue;
+}
+h1{
+  margin-bottom: 50px !important;
+}
+.row{
+  height: 40px;
+}
+#annou{
+  margin-left: 10px;
+  color: red;
+}
