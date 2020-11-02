@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -14,9 +13,9 @@ router.post('/',(req, res, next)=>{
   let sign = req.body.sign;
   let result;
 
-  number1 = parseFloat(number1);
   number2 = parseFloat(number2);
-
+  number1 = parseFloat(number1);
+  
   switch(sign){
     case "cong":
         result = number1 + number2;break;
@@ -28,11 +27,19 @@ router.post('/',(req, res, next)=>{
         result = number1 / number2;break;
     default: 
         result = "";break;
-
   }
-  console.log(number1 + " " + sign + " " + number2 + " = " + result);
-  res.render('index', { title: 'BTCN03 - Trần Văn Tú',first_number:number1, second_number:number2, result:result });
+  console.log(Handlebars);
+  //console.log(number1 + " " + sign + " " + number2 + " = " + result);
+  res.render('index', { title: 'Express',first_number:number1, second_number:number2, result:result, sign:sign});
 });
 
+function checkNumber(str){
+  let num = parseFloat(str);
+  let str1 = num.toString();
+  if(str === str1){
+      return true;
+  }
+  return false;
+}
 
 module.exports = router;

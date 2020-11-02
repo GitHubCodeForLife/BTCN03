@@ -1,3 +1,11 @@
+var hbs = require('hbs');
+hbs.registerPartials(__dirname + '/views/partials');
+hbs.registerHelper('checked', function (value, test) {
+  if (value == undefined) return '';
+  return value == test ? 'checked' : '';
+});
+app.set('view engine', 'hbs')
+
 function checkNumberAndSign(){
     //B1: Read input --> number 1 sign number2
     let number1, number2;   
@@ -7,34 +15,46 @@ function checkNumberAndSign(){
     //B2: check valiable
     if(number1==''&&number2==''){
         signAnnoucement('Chưa điền đủ 2 số hợp lệ để thực hiện phép tính');
+        event.preventDefault();
         return;
     }
     if(number1!=''&&number2==''){
         if(checkNumber(number1)==false){
             signAnnoucement('Giá trị nhập không hợp lệ, vui lòng nhập số thực');
+            event.preventDefault();
             return;
         }else{
             signAnnoucement('Chưa điền đủ 2 số hợp lệ để thực hiện phép tính');
+            event.preventDefault();
+
             return;
         }
     }
     if(number2!=''&&number1==''){
         if(checkNumber(number2)==false){
             signAnnoucement('Giá trị nhập không hợp lệ, vui lòng nhập số thực');
+            event.preventDefault();
+
             return;
         }else{
             signAnnoucement('Chưa điền đủ 2 số hợp lệ để thực hiện phép tính');
+            event.preventDefault();
+
             return;
         }
     }
     if(number1!=''&number2!=''){
         if(checkNumber(number1)==false||checkNumber(number2)==false){
             signAnnoucement('Giá trị nhập không hợp lệ, vui lòng nhập số thực');
+            event.preventDefault();
+
             return;
         }
         //When you don't input sign
         if(sign==-1){
             signAnnoucement('Bạn Chưa nhập phép tính');
+            event.preventDefault();
+
             return;
         }
     }
@@ -137,3 +157,6 @@ function hiddenAnnoucement(number){
     }
     warning.innerHTML = infor;
 }
+
+
+  
