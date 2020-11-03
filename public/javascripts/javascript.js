@@ -1,4 +1,3 @@
-
 function checkNumberAndSign(){
     //B1: Read input --> number 1 sign number2
     let number1, number2;   
@@ -85,7 +84,6 @@ function checkNumber(str){
    }
    return false;
 }
-
 
 function checkValid(num){
     let number;

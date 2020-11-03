@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: '18120629 - Express' });
+  res.render('index', { title: 'Express' });
 });
 
 /*Post numbers and sign*/
@@ -31,14 +31,5 @@ router.post('/',(req, res, next)=>{
   //console.log(number1 + " " + sign + " " + number2 + " = " + result);
   res.render('index', { title: '18120629',first_number:number1, second_number:number2, result:result, sign:sign});
 });
-
-function checkNumber(str){
-  let num = parseFloat(str);
-  let str1 = num.toString();
-  if(str === str1){
-      return true;
-  }
-  return false;
-}
 
 module.exports = router;
